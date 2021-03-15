@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/gta-web-components.esm.js"></script>
+    <script nomodule src="/build/gta-web-components.js"></script>
+  </head>
+  <body>
+    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+    <candidate-header></candidate-header>
+    <script>
+      let details = {
+        name: 'Candidate Name',
+        email: 'dummy@microsoft.com'
+      }
+      let component = document.querySelector('candidate-header');
+      console.log(component)
+      component.reqId = '456';
+      component.candidateInfo = details;
+      component.addEventListener('openJobDescription', () => {
+        console.log(details)
+      })
+      console.log(component)
+    </script>
+  </body>
+</html>

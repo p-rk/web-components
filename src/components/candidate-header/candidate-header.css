@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.candidate-name {
+  font-family: 'Segoe UI',helvetica,arial,sans-serif;
+  font-style: normal;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: -.01875rem;
+  margin-bottom: 1px;
+}
+
+
+.inline-button {
+  font-size: 14px;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #3062d6;
+}
