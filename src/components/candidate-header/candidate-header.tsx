@@ -1,6 +1,5 @@
 import { Component, Host, h, Event, EventEmitter, Prop } from '@stencil/core';
 
-
 interface CandidateDetails {
   name: string;
   email: string;

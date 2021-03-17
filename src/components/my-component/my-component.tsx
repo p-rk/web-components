@@ -1,18 +1,21 @@
-import { Component, h, Host } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 // import { format } from '../../utils/utils';
 
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.css',
+  styleUrl: 'my-component.scss',
   shadow: true,
 })
 export class MyComponent {
 
+
+  public details = {
+    name: 'Rama Krishna Putta',
+    email: 'raputta@microsoft.com'
+  }
   render() {
     return (
-      <Host>
-        <div>This is another component</div>
-      </Host>
+      <h1>This is another component (my-component)</h1>
     )
   }
 }

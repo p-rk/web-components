@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'gta-web-components',
@@ -19,4 +20,10 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  plugins: [
+    sass({
+      injectGlobalPaths: [],
+      includePaths: ['./src/components', '../../node_modules'],
+    })
+  ]
 };
