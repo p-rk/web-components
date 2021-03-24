@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2021
+ *   All rights reserved.
+ */
 /* eslint-disable */
 /* tslint:disable */
 /**
@@ -11,6 +15,7 @@ export namespace Components {
         "reqId": string;
     }
     interface GtaButton {
+        "btnName": string;
     }
     interface GtaDialog {
         "buttons": string;
@@ -59,6 +64,7 @@ declare namespace LocalJSX {
         "reqId"?: string;
     }
     interface GtaButton {
+        "btnName"?: string;
     }
     interface GtaDialog {
         "buttons"?: string;

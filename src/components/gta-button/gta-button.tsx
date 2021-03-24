@@ -1,4 +1,4 @@
-import { Component, Host, h, Element } from '@stencil/core';
+import { Component, Host, h, Element, Prop } from '@stencil/core';
 import {MDCRipple} from '@material/ripple';
 
 @Component({
@@ -9,6 +9,8 @@ import {MDCRipple} from '@material/ripple';
 export class GtaButton {
 
   private mdcBtn: MDCRipple;
+
+  @Prop() btnName: string;
 
   @Element() el!: HTMLElement;
 
@@ -28,7 +30,7 @@ export class GtaButton {
         <div class="mdc-touch-target-wrapper">
           <button class="mdc-button accessible-button">
             <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__label">Close</span>
+            <span class="mdc-button__label">{this.btnName}</span>
           </button>
         </div>
       </Host>

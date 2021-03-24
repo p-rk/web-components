@@ -87,7 +87,7 @@ export class Dialog implements ComponentInterface {
           </div>
           <div class="mdc-dialog__actions">
             {this._buttons?.map(btn => (
-              <gta-button data-mdc-dialog-button-default onClick={() => this.handleDialog()}>{btn?.name}</gta-button>
+              <gta-button btnName="Close" data-mdc-dialog-button-default onClick={() => this.handleDialog()}>{btn?.name}</gta-button>
             ))}
         </div>
         </div>

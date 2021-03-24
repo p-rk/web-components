@@ -7,17 +7,32 @@
 
 ## Properties
 
-| Property  | Attribute  | Description                     | Type      | Default |
-| --------- | ---------- | ------------------------------- | --------- | ------- |
-| `inoOpen` | `ino-open` | Opens the dialog if set to true | `boolean` | `false` |
+| Property      | Attribute      | Description | Type      | Default     |
+| ------------- | -------------- | ----------- | --------- | ----------- |
+| `buttons`     | `buttons`      |             | `string`  | `undefined` |
+| `headerTitle` | `header-title` |             | `string`  | `undefined` |
+| `isOpen`      | `is-open`      |             | `boolean` | `false`     |
 
 
 ## Events
 
-| Event        | Description                                       | Type               |
-| ------------ | ------------------------------------------------- | ------------------ |
-| `openChange` | Emits an event upon opening or closing the dialog | `CustomEvent<any>` |
+| Event        | Description | Type               |
+| ------------ | ----------- | ------------------ |
+| `openChange` |             | `CustomEvent<any>` |
 
+
+## Dependencies
+
+### Depends on
+
+- [gta-button](../gta-button)
+
+### Graph
+```mermaid
+graph TD;
+  gta-dialog --> gta-button
+  style gta-dialog fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
