@@ -1,0 +1,11 @@
+@use '@material/button/mdc-button';
+@use '@material/button';
+
+.accessible-button {
+  @include button.filled-accessible(#2266e3);
+  word-spacing: 0;
+}
+
+:host {
+  --button-color-primary: blue;
+}

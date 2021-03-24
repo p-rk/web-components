@@ -22,6 +22,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@material/button": "^10.0.0",
     "@material/dialog": "^10.0.0",
     "@stencil/core": "^2.0.1",
     "@stencil/sass": "^1.4.1"

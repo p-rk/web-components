@@ -1,0 +1,66 @@
+/* -----------------------------------------------------------------------
+* <copyright company="Microsoft Corporation">
+*   Copyright (c) Microsoft Corporation.  All rights reserved.
+* </copyright>
+* ----------------------------------------------------------------------- */
+
+// Never import font families from this file.
+// They should only be used for making the type ramp.
+// If a font/size/line-height combination does not exist in the type ramp,
+// consult your designer before adding them to the type ramp.
+
+@mixin default-light() {
+    font-family: 'Segoe UI', helvetica, arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    text-transform: none;
+}
+
+@mixin default-semilight() {
+    font-family: 'Segoe UI', helvetica, arial, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: none;
+}
+
+@mixin default-regular() {
+    font-family: 'Segoe UI', helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+}
+
+@mixin default-semibold() {
+    font-family: 'Segoe UI', helvetica, arial, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: none;
+}
+
+@mixin default-bold() {
+    font-family: 'Segoe UI', helvetica, arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: none;
+}
+
+@mixin alt-light() {
+    font-family: 'DIN', helvetica, arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+@mixin alt-regular() {
+    font-family: 'DIN', helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+@mixin alt-bold() {
+    font-family: 'DIN', helvetica, arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+}

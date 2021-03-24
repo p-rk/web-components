@@ -1,0 +1,21 @@
+@use '@material/dialog';
+@include dialog.core-styles;
+
+@import '../../theme/index';
+
+$primary: map-get($theme, link-color);
+$fonts: map-get($theme, default-font-family);
+
+* {
+  font-family: $fonts !important;
+}
+
+.mdc-button {
+  color: $primary
+}
+
+@media (min-width: 592px) {
+  .mdc-dialog .mdc-dialog__surface {
+      max-width: 55%;
+  }
+}

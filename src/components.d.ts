@@ -10,6 +10,13 @@ export namespace Components {
         "candidateInfo": CandidateDetails;
         "reqId": string;
     }
+    interface GtaButton {
+    }
+    interface GtaDialog {
+        "buttons": string;
+        "headerTitle": string;
+        "isOpen": boolean;
+    }
     interface MyComponent {
     }
 }
@@ -20,6 +27,18 @@ declare global {
         prototype: HTMLCandidateHeaderElement;
         new (): HTMLCandidateHeaderElement;
     };
+    interface HTMLGtaButtonElement extends Components.GtaButton, HTMLStencilElement {
+    }
+    var HTMLGtaButtonElement: {
+        prototype: HTMLGtaButtonElement;
+        new (): HTMLGtaButtonElement;
+    };
+    interface HTMLGtaDialogElement extends Components.GtaDialog, HTMLStencilElement {
+    }
+    var HTMLGtaDialogElement: {
+        prototype: HTMLGtaDialogElement;
+        new (): HTMLGtaDialogElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -28,6 +47,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "candidate-header": HTMLCandidateHeaderElement;
+        "gta-button": HTMLGtaButtonElement;
+        "gta-dialog": HTMLGtaDialogElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -37,10 +58,20 @@ declare namespace LocalJSX {
         "onOpenJobDescription"?: (event: CustomEvent<boolean>) => void;
         "reqId"?: string;
     }
+    interface GtaButton {
+    }
+    interface GtaDialog {
+        "buttons"?: string;
+        "headerTitle"?: string;
+        "isOpen"?: boolean;
+        "onOpenChange"?: (event: CustomEvent<any>) => void;
+    }
     interface MyComponent {
     }
     interface IntrinsicElements {
         "candidate-header": CandidateHeader;
+        "gta-button": GtaButton;
+        "gta-dialog": GtaDialog;
         "my-component": MyComponent;
     }
 }
@@ -49,6 +80,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "candidate-header": LocalJSX.CandidateHeader & JSXBase.HTMLAttributes<HTMLCandidateHeaderElement>;
+            "gta-button": LocalJSX.GtaButton & JSXBase.HTMLAttributes<HTMLGtaButtonElement>;
+            "gta-dialog": LocalJSX.GtaDialog & JSXBase.HTMLAttributes<HTMLGtaDialogElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

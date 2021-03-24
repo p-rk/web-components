@@ -1,0 +1,306 @@
+/* -----------------------------------------------------------------------
+* <copyright company="Microsoft Corporation">
+*   Copyright (c) Microsoft Corporation.  All rights reserved.
+* </copyright>
+* ----------------------------------------------------------------------- */
+@import 'font-family';
+
+// for each type ramp item, be sure to expose both:
+// 1) a mixin that stylesheets can use
+// 2) a class that html can use
+
+@mixin install-type-ramp-classes($ms-theme) {
+    $requested-ramp-items: map-get($ms-theme, type-ramp);
+
+    @each $ramp-item in $requested-ramp-items {
+
+        // BEGIN old type ramp. Deprecated
+        @if $ramp-item == 'hero-title' {
+            .ms-ramp-hero-title {
+                @include ms-ramp-hero-title();
+            }
+        }
+        @else if $ramp-item == 'hero-label' {
+            .ms-ramp-hero-label {
+                @include ms-ramp-hero-label();
+            }
+        }
+        @else if $ramp-item == 'page-title' {
+            .ms-ramp-page-title {
+                @include ms-ramp-page-title();
+            }
+        }
+        @else if $ramp-item == 'standard-pane-title' {
+            .ms-ramp-standard-pane-title {
+                @include ms-ramp-standard-pane-title();
+            }
+        }
+        @else if $ramp-item == 'dialog-section-title' {
+            .ms-ramp-dialog-section-title {
+                @include ms-ramp-dialog-section-title();
+            }
+        }
+        @else if $ramp-item == 'form-section-title' {
+            .ms-ramp-form-section-title {
+                @include ms-ramp-form-section-title();
+            }
+        }
+        @else if $ramp-item == 'tile-title' {
+            .ms-ramp-tile-title {
+                @include ms-ramp-tile-title();
+            }
+        }
+        @else if $ramp-item == 'list-view-subheading' {
+            .ms-ramp-list-view-subheading {
+                @include ms-ramp-list-view-subheading();
+            }
+        }
+        @else if $ramp-item == 'form-label' {
+            .ms-ramp-form-label {
+                @include ms-ramp-form-label();
+            }
+        }
+        @else if $ramp-item == 'button-label' {
+            .ms-ramp-button-label {
+                @include ms-ramp-button-label();
+            }
+        }
+        @else if $ramp-item == 'text-label' {
+            .ms-ramp-text-label {
+                @include ms-ramp-text-label();
+            }
+        }
+        @else if $ramp-item == 'paragraph' {
+            .ms-ramp-paragraph {
+                @include ms-ramp-paragraph();
+            }
+        }
+        @else if $ramp-item == 'tile-subheading' {
+            .ms-ramp-tile-subheading {
+                @include ms-ramp-tile-subheading();
+            }
+        }
+        @else if $ramp-item == 'table-column-label' {
+            .ms-ramp-table-column-label {
+                @include ms-ramp-table-column-label();
+            }
+        }
+        @else if $ramp-item == 'authoring-pane-text' {
+            .ms-ramp-authoring-pane-text {
+                @include ms-ramp-authoring-pane-text();
+            }
+        }
+        // END old type ramp. Deprecated
+
+
+        // BEGIN new type ramp:
+        @else if $ramp-item == 'title-xxl' {
+            .ms-title-xxl {
+                @include ms-title-xxl();
+            }
+        }
+
+        @else if $ramp-item == 'title-xl' {
+            .ms-title-xl {
+                @include ms-title-xl();
+            }
+        }
+        @else if $ramp-item == 'title-l' {
+            .ms-title-l {
+                @include ms-title-l();
+            }
+        }
+        @else if $ramp-item == 'title-m' {
+            .ms-title-m {
+                @include ms-title-m();
+
+                &.ms-secondary {
+                    @include default-regular();
+                }
+            }
+        }
+        @else if $ramp-item == 'label-s' {
+            .ms-label-s {
+                @include ms-label-s();
+
+                &.ms-secondary {
+                    @include default-regular();
+                }
+            }
+        }
+        @else if $ramp-item == 'body-s' {
+            .ms-body-s {
+                @include ms-body-s();
+
+                &.ms-secondary {
+                    @include default-semibold();
+                }
+            }
+        }
+        @else if $ramp-item == 'subtitle-xs' {
+            .ms-subtitle-xs {
+                @include ms-subtitle-xs();
+            }
+        }
+        @else if $ramp-item == 'caption-xs' {
+            .ms-caption-xs {
+                @include ms-caption-xs();
+            }
+        }
+        @else if $ramp-item == 'hyperlink-s' {
+            .ms-hyperlink-s {
+                @include ms-hyperlink-s($ms-theme);
+            }
+
+            a {
+                @include ms-hyperlink-s($ms-theme);;
+            }
+        }
+        @else {
+            @warn "#{$ramp-item} is not a supported type ramp. Did you have a typo?";
+        }
+    }
+}
+
+@mixin ms-title-xxl {
+    @include default-semibold();
+    font-size: 1.5rem; // 24px
+    line-height: 2rem; // 32px
+    letter-spacing: 0rem; // 0px
+}
+
+@mixin ms-title-xl {
+    @include default-semibold();
+    font-size: 1.25rem; // 20px
+    line-height: 1.75rem; // 28px
+    letter-spacing: -0.0375rem; // -.6px
+}
+
+@mixin ms-title-l {
+    @include default-semibold();
+    font-size: 1.125rem; // 18px
+    line-height: 1.5rem; // 24px
+    letter-spacing: -0.01875rem; // -.3px
+}
+
+@mixin ms-title-m {
+    @include default-semibold();
+    font-size: 1rem; // 16px
+    line-height: 1.5rem; // 24px
+    letter-spacing: -0.00625rem; // -.1px
+}
+
+@mixin ms-label-s {
+    @include default-semibold();
+    font-size: 0.875rem; // 14px
+    line-height: 1.25rem; // 20px
+    letter-spacing: 0rem; // 0px
+}
+
+@mixin ms-body-s {
+    @include default-regular();
+    font-size: 0.875rem; // 14px
+    line-height: 1.25rem; // 20px
+    letter-spacing: 0rem; // 0px
+}
+
+@mixin ms-subtitle-xs {
+    @include default-regular();
+    font-size: 0.75rem; // 12px
+    line-height: 1rem; // 16px
+    letter-spacing: 0.00625rem; // .1px
+}
+
+@mixin ms-caption-xs {
+    @include alt-regular();
+    font-size: 0.75rem; // 12px
+    line-height: 0.75rem; // 12px
+    letter-spacing: 0.00625rem; // .1px
+}
+
+@mixin ms-hyperlink-s($ms-theme) {
+    @include default-regular();
+    font-size: 0.875rem; // 14px
+    line-height: 1.25rem; // 20px
+    letter-spacing: 0rem; // 0px
+    text-decoration: underline;
+    color: map-get($ms-theme, hyperlink-color);
+}
+
+
+// Old type ramp below. Deprecated:
+@mixin ms-ramp-hero-title {
+    @include alt-light();
+    font-size: 3rem; //48px
+    line-height: 4rem; //64px
+}
+@mixin ms-ramp-hero-label {
+    @include default-light();
+    font-size: 3rem; //48px
+    line-height: 4rem; //64px
+}
+@mixin ms-ramp-page-title {
+    @include default-semilight();
+    font-size: 2rem; //32px
+    line-height: 2.5rem; //40px
+}
+@mixin ms-ramp-standard-pane-title {
+    @include default-semilight();
+    font-size: 1.5rem; //24px
+    line-height: 2rem; //32px
+}
+@mixin ms-ramp-dialog-section-title {
+    @include default-semibold();
+    font-size: 1.125rem; //18px
+    line-height: 1.5rem; //24px
+}
+@mixin ms-ramp-form-section-title {
+    @include default-regular();
+    font-size: 1.125rem; //18px
+    line-height: 1.5rem; //24px
+}
+@mixin ms-ramp-tile-title {
+    @include default-regular();
+    font-size: 1rem; //16px
+    line-height: 1.25rem; //20px
+}
+@mixin ms-ramp-list-view-subheading {
+    @include alt-regular();
+    font-size: 0.875rem; //14px
+    line-height: 1rem; //16px
+}
+@mixin ms-ramp-form-label {
+    @include default-regular();
+    font-size: 0.875rem; //14px
+    line-height: 1.25rem; //20px
+}
+@mixin ms-ramp-button-label {
+    @include default-regular();
+    font-size: 0.875rem; //14px
+    line-height: 1.25rem; //20px
+}
+@mixin ms-ramp-text-label {
+    @include default-regular();
+    font-size: 0.875rem; //14px
+    line-height: 1.25rem; //20px
+}
+@mixin ms-ramp-paragraph {
+    @include default-regular();
+    font-size: 0.875rem; //14px
+    line-height: 1.25rem; //20px
+}
+@mixin ms-ramp-tile-subheading {
+    @include default-regular();
+    font-size: 0.75rem; //12px
+    line-height: 1rem; //16px
+}
+@mixin ms-ramp-table-column-label {
+    @include alt-regular();
+    font-size: 0.75rem; //12px
+    line-height: 1rem; //16px
+}
+@mixin ms-ramp-authoring-pane-text {
+    @include default-regular();
+    font-size: 0.75rem; //12px
+    line-height: 1rem; //16px
+}

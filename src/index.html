@@ -4,32 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
-    <script type="module" src="/azur.jkjgta-web-components.esm.js"></script>
+    <link rel="stylesheet" href="/build/gta-web-components.css" />
+    <script type="module" src="/build/gta-web-components.esm.js"></script>
     <script nomodule src="/build/gta-web-components.js"></script>
-
   </head>
   <body>
-    <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
-    <candidate-header></candidate-header>
-    <sl-alert open>
-      <sl-icon slot="icon" name="info-circle"></sl-icon>
-      This is a standard alert. You can customize its content and even the icon.
-    </sl-alert>
+    <gta-dialog is-open="false" header-title="Job Description" buttons='[{ "name": "Hello", "focus": false  }]'>
+      <div class="awesome-content" slot="content"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima soluta officiis, repellat quas incidunt nobis! Beatae est temporibus officia consequuntur neque illo accusantium, asperiores, molestiae nesciunt distinctio soluta sunt sed! </div>>
+    </gta-dialog>
+    <!-- <gta-button></gta-button> -->
+    <!-- <button id="btn-cc">Open</button>
+    <gta-dialog is-open="true" header-title="Job Description" buttons='[{ "name": "Hello", "focus": false  }, { "name": "Close", "focus": true     }]'>
+      <div class="awesome-content" slot="content"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima soluta officiis, repellat quas incidunt nobis! Beatae est temporibus officia consequuntur neque illo accusantium, asperiores, molestiae nesciunt distinctio soluta sunt sed! </div>>
+    </gta-dialog> -->
 
+    <candidate-header></candidate-header>
     <script>
       let details = {
-        name: 'Xyz',
+        name: 'Rama',
         email: 'dummy@microsoft.com'
       }
       let component = document.querySelector('candidate-header');
-      console.log(component)
-      component.reqId = '456';
+      component.reqId = '456789';
       component.candidateInfo = details;
       component.addEventListener('openJobDescription', (event) => {
-        console.log(event.detail)
+        const dialog = document.querySelector('gta-dialog');
+        dialog.addEventListener("openChange", (evt) => {
+          dialog.setAttribute("is-open", false)
+        })
+        dialog.setAttribute("is-open", true)
       })
-      console.log(component)
+
     </script>
   </body>
 </html>

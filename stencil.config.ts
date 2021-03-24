@@ -23,7 +23,7 @@ export const config: Config = {
   plugins: [
     sass({
       injectGlobalPaths: [],
-      includePaths: ['./src/components', '../../node_modules'],
+      includePaths: ['./src/components', './node_modules'],
     })
   ]
 };
