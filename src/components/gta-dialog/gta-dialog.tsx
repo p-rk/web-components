@@ -1,4 +1,4 @@
-import { MDCDialog, MDCDialogFoundation } from '@material/dialog';
+import { MDCDialog } from '@material/dialog';
 import {
   Component,
   ComponentInterface,
