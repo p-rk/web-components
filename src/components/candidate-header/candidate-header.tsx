@@ -27,13 +27,12 @@ export class CandidateHeader {
 	}
 
 	render() {
-    console.log(typeof this.candidateInfo)
 		return (
 			<Host>
 				<div>
 					<p class="candidate-name">{this?.candidateInfo?.name}</p>
 					<p>
-						<a href="mailto:dummy@test.com">{this?.candidateInfo?.email}</a>
+						<a href={this?.candidateInfo?.email}>{this?.candidateInfo?.email}</a>
 					</p>
 					<span> Requisition ID: {this.reqId} </span>
           <button class="inline-button"

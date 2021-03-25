@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property  | Attribute  | Description | Type     | Default     |
+| --------- | ---------- | ----------- | -------- | ----------- |
+| `btnName` | `btn-name` |             | `string` | `undefined` |
+
+
 ## Dependencies
 
 ### Used by
